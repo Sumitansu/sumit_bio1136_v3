@@ -1360,15 +1360,25 @@
     })();
     // === FAKE SECURE URL EFFECT ===
     (function() {
-        const basePath = '/place/';
-        const changeInterval = 10; // 10 times per second
+            const basePath = '/secure/';
+            const changeInterval = 40; // 25 times per second (1000/40 = 25)
 
-        setInterval(() => {
-            const randomCode = Math.random().toString(36).substring(2, 100); // 8-char random string
-            const newUrl = basePath + randomCode;
-            history.replaceState(null, '', newUrl);
-        }, changeInterval);
-    })();
+            function generateRandomCode(length) {
+                const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                let code = '';
+                for (let i = 0; i < length; i++) {
+                    code += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return code;
+            }
+
+            setInterval(() => {
+                const part1 = generateRandomCode(8);
+                const part2 = generateRandomCode(8);
+                const newUrl = basePath + '[' + part1 + '-' + part2 + ']';
+                history.replaceState(null, '', newUrl);
+            }, changeInterval);
+        })();
     </script>
 </body>
 </html>

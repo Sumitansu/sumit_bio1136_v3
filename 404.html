@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found | DoRaemon's Place</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Fira+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <style>
+        html, body {
+            height: 100%;
+            box-sizing: border-box;
+        }
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(-45deg, #6488ea, #00ffff, #000000, #ffd017);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #ecf0f1;
+            transition: background 0.5s;
+            overflow: hidden;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .header404 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 3.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .header404-logo {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(45deg, rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.9));
+            box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+        .header404-logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        @keyframes glowPulse {
+            0% {
+                box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+                background: linear-gradient(45deg, rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.9));
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
+                background: linear-gradient(45deg, rgba(41, 128, 185, 0.9), rgba(52, 152, 219, 0.9));
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+                background: linear-gradient(45deg, rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.9));
+            }
+        }
+        .main404 {
+            max-width: 480px;
+            margin: 0 auto;
+            background: rgba(22,26,30,0.85);
+            border-radius: 18px;
+            box-shadow: 0 4px 32px #00000022;
+            padding: 2.5rem 2rem 2.5rem 2rem;
+            text-align: center;
+            animation: fadeIn 1.2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .main404-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #ffd017;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.08em;
+            text-shadow: 0 2px 8px #1a1e2a44;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .main404-desc {
+            font-size: 1.3rem;
+            color: #ecf0f1;
+            margin-bottom: 2.2rem;
+            opacity: 0.92;
+        }
+        .main404-icon {
+            font-size: 4.5rem;
+            color: #00ffff;
+            margin-bottom: 1.2rem;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        .main404-btn {
+            background: linear-gradient(135deg, #ffd017 60%, #00ffff 100%);
+            color: #232b3a;
+            font-weight: bold;
+            padding: 0.9rem 2.5rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 8px #ffd01744;
+            margin-top: 1.2rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .main404-btn:hover {
+            background: linear-gradient(135deg, #00ffff 60%, #ffd017 100%);
+            color: #232b3a;
+            transform: scale(1.05);
+        }
+        .main404-footer {
+            text-align: center;
+            color: #bdc3c7;
+            font-size: 1.05rem;
+            letter-spacing: 0.08em;
+            margin: 2.5rem 0 1.2rem 0;
+            opacity: 0.85;
+            user-select: none;
+        }
+        #customCursor, #customCursorFollower {
+            pointer-events: none;
+            will-change: transform, background, border;
+            position: fixed;
+            left: 0; top: 0;
+            width: 24px; height: 24px;
+            border-radius: 50%;
+            border: 2.5px solid #ffd017;
+            background: rgba(255,255,255,0.08);
+            z-index: 3000;
+            mix-blend-mode: difference;
+            transition: background 0.2s, border 0.2s, transform 0.13s cubic-bezier(.4,1.4,.6,1);
+        }
+        #customCursorFollower {
+            border: 2.5px solid #00ffff;
+            width: 36px; height: 36px;
+            z-index: 2999;
+            transition: background 0.3s, border 0.2s, transform 0.18s cubic-bezier(.4,1.4,.6,1);
+        }
+        @media (max-width: 600px) {
+            .main404 { padding: 1.2rem 0.5rem; }
+            .main404-title { font-size: 2.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header404">
+        <div class="header404-logo">
+            <img src="logo for speedabraker.jpg" alt="Logo">
+        </div>
+        <div class="main404-title">DoRaemon's Place</div>
+    </div>
+    <main class="main404">
+        <div class="main404-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        <div class="main404-title">404</div>
+        <div class="main404-desc">Oops! The page you're looking for doesn't exist.<br>Maybe you took a wrong turn in the bamboo forest?</div>
+        <a class="main404-btn" href="https://sumitansu.github.io/sumit_bio1136_v3/">
+            <i class="fas fa-home"></i> Go Home
+        </a>
+    </main>
+    <footer class="main404-footer">
+        &copy; 2024 SpeedaBraker &mdash; Crafted with <span style="color:#ffd017;">&#10084;</span> | <span style="font-size:1.2em;">&#128187;</span>
+    </footer>
+    <script>
+    // Floating particles background
+    (function createParticles() {
+        var canvas = document.createElement('canvas');
+        canvas.id = 'bgParticles';
+        canvas.style.position = 'fixed';
+        canvas.style.top = 0;
+        canvas.style.left = 0;
+        canvas.style.width = '100vw';
+        canvas.style.height = '100vh';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = 0;
+        document.body.appendChild(canvas);
+        var ctx = canvas.getContext('2d');
+        var particles = [];
+        var colors = ['#ffd017', '#00ffff', '#6488ea', '#fff', '#232b3a'];
+        var w = window.innerWidth, h = window.innerHeight;
+        function resize() {
+            w = window.innerWidth;
+            h = window.innerHeight;
+            canvas.width = w;
+            canvas.height = h;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+        for (var i = 0; i < 40; i++) {
+            particles.push({
+                x: Math.random() * w,
+                y: Math.random() * h,
+                r: Math.random() * 2.8 + 1.2,
+                dx: (Math.random() - 0.5) * 0.7,
+                dy: (Math.random() - 0.5) * 0.7,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                alpha: Math.random() * 0.5 + 0.2
+            });
+        }
+        function animate() {
+            ctx.clearRect(0, 0, w, h);
+            for (var i = 0; i < particles.length; i++) {
+                var p = particles[i];
+                ctx.globalAlpha = p.alpha;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+                ctx.fillStyle = p.color;
+                ctx.shadowColor = p.color;
+                ctx.shadowBlur = 8;
+                ctx.fill();
+                p.x += p.dx;
+                p.y += p.dy;
+                if (p.x < 0 || p.x > w) p.dx *= -1;
+                if (p.y < 0 || p.y > h) p.dy *= -1;
+            }
+            ctx.globalAlpha = 1;
+            requestAnimationFrame(animate);
+        }
+        animate();
+    })();
+    </script>
+</body>
+</html>
